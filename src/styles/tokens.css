@@ -1,0 +1,59 @@
+/* tokens.css — 뉴모피즘(Neumorphism) 디자인 토큰 */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800;1,14..32,400&display=swap');
+
+:root {
+    /* Primary */
+    --primary: #667eea;
+    --primary-dark: #5a6fd6;
+    --primary-light: #dfe3f8;
+    --primary-glow: rgba(102, 126, 234, 0.18);
+
+    /* Semantic */
+    --success: #48bb78;
+    --success-bg: #e6f7ef;
+    --success-text: #276749;
+    --warning: #ecc94b;
+    --warning-bg: #fefcbf;
+    --warning-text: #975a16;
+    --danger: #fc8181;
+    --danger-bg: #fff5f5;
+    --danger-text: #c53030;
+
+    /* Neumorphism Surface */
+    --bg: #e0e5ec;
+    --surface: #e0e5ec;
+    --surface-2: #e8ecf2;
+    --border: transparent;
+    --border-soft: transparent;
+
+    /* Neumorphism Shadows */
+    --shadow-raised: 6px 6px 12px #b8bec7, -6px -6px 12px #ffffff;
+    --shadow-raised-sm: 3px 3px 6px #b8bec7, -3px -3px 6px #ffffff;
+    --shadow-pressed: inset 3px 3px 6px #b8bec7, inset -3px -3px 6px #ffffff;
+    --shadow-pressed-deep: inset 5px 5px 10px #b8bec7, inset -5px -5px 10px #ffffff;
+
+    /* Legacy aliases (compatibility) */
+    --shadow-sm: var(--shadow-raised-sm);
+    --shadow-md: var(--shadow-raised);
+    --shadow-blue: var(--shadow-raised), 0 4px 15px rgba(102, 126, 234, 0.2);
+
+    /* Text */
+    --text-primary: #2d3748;
+    --text-secondary: #718096;
+    --text-muted: #a0aec0;
+
+    /* Border-radius */
+    --radius-sm: 10px;
+    --radius-md: 16px;
+    --radius-lg: 22px;
+    --radius-pill: 9999px;
+
+    /* Font */
+    --font: 'Inter', -apple-system, system-ui, sans-serif;
+
+    /* Backward-compat aliases */
+    --bg-color: var(--bg);
+    --card-bg: var(--surface);
+    --border-color: transparent;
+    --secondary: var(--text-primary);
+}

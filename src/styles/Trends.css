@@ -1,0 +1,70 @@
+:root {
+    --neumo-bg: #e0e5ec;
+    --neumo-shadow-dark: #a3b1c6;
+    --neumo-shadow-light: #ffffff;
+    --neumo-inset-dark: rgba(163, 177, 198, 0.6);
+    --neumo-inset-light: rgba(255, 255, 255, 1);
+}
+
+.trend-graph-container {
+    background-color: var(--neumo-bg);
+    padding: 1.5rem;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: inset 8px 8px 16px var(--neumo-shadow-dark),
+        inset -8px -8px 16px var(--neumo-shadow-light);
+}
+
+.graph-baseline {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: var(--accent-red);
+    box-shadow: 0 0 8px var(--accent-red);
+    opacity: 0.6;
+}
+
+.trend-point {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--neumo-bg);
+    cursor: pointer;
+    z-index: 10;
+    position: absolute;
+    transform: translate(-50%, 50%);
+}
+
+.trend-point.raised {
+    box-shadow: 4px 4px 8px var(--neumo-shadow-dark),
+        -4px -4px 8px var(--neumo-shadow-light);
+}
+
+.trend-point.simple {
+    border: 1px solid var(--neumo-shadow-dark);
+}
+
+.graph-path {
+    fill: none;
+    stroke: var(--primary);
+    stroke-width: 2.5;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+}
+
+.trend-tooltip {
+    position: absolute;
+    background: var(--neumo-bg);
+    padding: 0.5rem 0.8rem;
+    border-radius: 10px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    pointer-events: none;
+    z-index: 20;
+    transform: translateY(-120%);
+    box-shadow: 5px 5px 10px var(--neumo-shadow-dark),
+        -5px -5px 10px var(--neumo-shadow-light);
+}

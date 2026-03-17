@@ -1,0 +1,151 @@
+/* components.css — 뉴모피즘 카드, 버튼, 폼, 배지 */
+
+/* ── Card (Neumorphic Raised) ────────────────────────── */
+.card {
+    background: var(--bg);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-raised);
+    padding: 1.5rem;
+    margin-bottom: 1.25rem;
+    border: none;
+}
+
+/* ── Buttons ─────────────────────────────────────────── */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    padding: 0.75rem 1.5rem;
+    min-height: 44px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border: none;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(.4, 0, .2, 1);
+    font-family: var(--font);
+    user-select: none;
+    white-space: nowrap;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea, #5a6fd6);
+    color: #fff;
+    border-radius: var(--radius-pill);
+    box-shadow: var(--shadow-raised), 0 4px 12px rgba(102, 126, 234, 0.25);
+}
+
+.btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-raised), 0 6px 18px rgba(102, 126, 234, 0.35);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+    box-shadow: var(--shadow-raised-sm), 0 2px 6px rgba(102, 126, 234, 0.2);
+}
+
+.btn-secondary {
+    background: var(--bg);
+    color: var(--primary);
+    border-radius: var(--radius-pill);
+    box-shadow: var(--shadow-raised-sm);
+}
+
+.btn-secondary:hover {
+    box-shadow: var(--shadow-raised);
+}
+
+.btn-secondary:active {
+    box-shadow: var(--shadow-pressed);
+}
+
+.btn-outline {
+    background: var(--bg);
+    border: none;
+    color: var(--text-primary);
+    box-shadow: var(--shadow-raised-sm);
+}
+
+.btn-outline:hover {
+    box-shadow: var(--shadow-raised);
+}
+
+.btn-outline:active {
+    box-shadow: var(--shadow-pressed);
+}
+
+/* ── Form ────────────────────────────────────────────── */
+.form-group {
+    margin-bottom: 1.25rem;
+}
+
+.form-label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.form-input,
+.form-select {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    border: none;
+    border-radius: var(--radius-md);
+    font-family: var(--font);
+    font-size: 1rem;
+    background: var(--bg);
+    color: var(--text-primary);
+    transition: box-shadow 0.2s;
+    appearance: none;
+    min-height: 44px;
+    box-shadow: var(--shadow-pressed);
+}
+
+.form-input:focus,
+.form-select:focus {
+    outline: none;
+    box-shadow: var(--shadow-pressed-deep), 0 0 0 2px var(--primary-glow);
+}
+
+/* ── Badges (Neumorphic micro-raised) ────────────────── */
+.badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.7rem;
+    border-radius: var(--radius-pill);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    box-shadow: var(--shadow-raised-sm);
+}
+
+.badge-success {
+    background: var(--success-bg);
+    color: var(--success-text);
+}
+
+.badge-warning {
+    background: var(--warning-bg);
+    color: var(--warning-text);
+}
+
+.badge-danger {
+    background: var(--danger-bg);
+    color: var(--danger-text);
+}
+
+.badge-outline {
+    background: var(--bg);
+    color: var(--text-secondary);
+}
+
+.badge-blue {
+    background: var(--primary-light);
+    color: var(--primary);
+}

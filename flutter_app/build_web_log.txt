@@ -1,0 +1,277 @@
+Compiling lib/main.dart for the Web...                          
+Wasm dry run findings:
+Found incompatibilities with WebAssembly.
+
+package:flutter_app/main.dart 3:1 - dart:html unsupported (0)
+
+Consider addressing these issues to enable wasm builds. See docs for more info: https://docs.flutter.dev/platform-integration/web/wasm
+
+Use --no-wasm-dry-run to disable these warnings.
+Target dart2js failed: ProcessException: Process exited abnormally with exit code 1:
+lib/main.dart:29:8:
+Error: Type 'BodyPart' not found.
+  List<BodyPart> _selectedParts = [];
+       ^^^^^^^^
+lib/main.dart:80:8:
+Error: Type 'BodyPart' not found.
+  List<BodyPart> _mapMuscles(List<String> muscleIds) {
+       ^^^^^^^^
+lib/main.dart:29:8:
+Error: 'BodyPart' isn't a type.
+  List<BodyPart> _selectedParts = [];
+       ^^^^^^^^
+lib/main.dart:81:10:
+Error: 'BodyPart' isn't a type.
+    List<BodyPart> parts = [];
+         ^^^^^^^^
+lib/main.dart:83:16:
+Error: The getter 'BodyPart' isn't defined for the type '_BodyAtlasRendererState'.
+ - '_BodyAtlasRendererState' is from 'package:flutter_app/main.dart' ('lib/main.dart').
+      'chest': BodyPart.chest, '대흉근': BodyPart.chest, '소흉근': BodyPart.chest,
+               ^^^^^^^^
+lib/main.dart:83:39:
+Error: The getter 'BodyPart' isn't defined for the type '_BodyAtlasRendererState'.
+ - '_BodyAtlasRendererState' is from 'package:flutter_app/main.dart' ('lib/main.dart').
+      'chest': BodyPart.chest, '대흉근': BodyPart.chest, '소흉근': BodyPart.chest,
+                                      ^^^^^^^^
+lib/main.dart:83:62:
+Error: The getter 'BodyPart' isn't defined for the type '_BodyAtlasRendererState'.
+ - '_BodyAtlasRendererState' is from 'package:flutter_app/main.dart' ('lib/main.dart').
+      'chest': BodyPart.chest, '대흉근': BodyPart.chest, '소흉근': BodyPart.chest,
+                                                             ^^^^^^^^
+lib/main.dart:84:16:
+Error: The getter 'BodyPart' isn't defined for the type '_BodyAtlasRendererState'.
+ - '_BodyAtlasRendererState' is from 'package:flutter_app/main.dart' ('lib/main.dart').
+      'quads': BodyPart.quads, '대퇴직근': BodyPart.quads, '대퇴사두근': BodyPart.quads,
+               ^^^^^^^^
+lib/main.dart:84:40:
+Error: The getter 'BodyPart' isn't defined for the type '_BodyAtlasRendererState'.
+ - '_BodyAtlasRendererState' is from 'package:flutter_app/main.dart' ('lib/main.dart').
+      'quads': BodyPart.quads, '대퇴직근': BodyPart.quads, '대퇴사두근': BodyPart.quads,
+                                       ^^^^^^^^
+lib/main.dart:84:65:
+Error: The getter 'BodyPart' isn't defined for the type '_BodyAtlasRendererState'.
+ - '_BodyAtlasRendererState' is from 'package:flutter_app/main.dart' ('lib/main.dart').
+      'quads': BodyPart.quads, '대퇴직근': BodyPart.quads, '대퇴사두근': BodyPart.quads,
+                                                                ^^^^^^^^
+lib/main.dart:85:21:
+Error: The getter 'BodyPart' isn't defined for the type '_BodyAtlasRendererState'.
+ - '_BodyAtlasRendererState' is from 'package:flutter_app/main.dart' ('lib/main.dart').
+      'hamstrings': BodyPart.hamstrings, '슬굴곡근': BodyPart.hamstrings, '대퇴이두': BodyPart.hamstrings,
+                    ^^^^^^^^
+lib/main.dart:85:50:
+Error: The getter 'BodyPart' isn't defined for the type '_BodyAtlasRendererState'.
+ - '_BodyAtlasRendererState' is from 'package:flutter_app/main.dart' ('lib/main.dart').
+      'hamstrings': BodyPart.hamstrings, '슬굴곡근': BodyPart.hamstrings, '대퇴이두': BodyPart.hamstrings,
+                                                 ^^^^^^^^
+lib/main.dart:85:79:
+Error: The getter 'BodyPart' isn't defined for the type '_BodyAtlasRendererState'.
+ - '_BodyAtlasRendererState' is from 'package:flutter_app/main.dart' ('lib/main.dart').
+      'hamstrings': BodyPart.hamstrings, '슬굴곡근': BodyPart.hamstrings, '대퇴이두': BodyPart.hamstrings,
+                                                                              ^^^^^^^^
+lib/main.dart:86:17:
+Error: The getter 'BodyPart' isn't defined for the type '_BodyAtlasRendererState'.
+ - '_BodyAtlasRendererState' is from 'package:flutter_app/main.dart' ('lib/main.dart').
+      'calves': BodyPart.calves, '비복근': BodyPart.calves, '가자미근': BodyPart.calves,
+                ^^^^^^^^
+lib/main.dart:86:41:
+Error: The getter 'BodyPart' isn't defined for the type '_BodyAtlasRendererState'.
+ - '_BodyAtlasRendererState' is from 'package:flutter_app/main.dart' ('lib/main.dart').
+      'calves': BodyPart.calves, '비복근': BodyPart.calves, '가자미근': BodyPart.calves,
+                                        ^^^^^^^^
+lib/main.dart:86:66:
+Error: The getter 'BodyPart' isn't defined for the type '_BodyAtlasRendererState'.
+ - '_BodyAtlasRendererState' is from 'package:flutter_app/main.dart' ('lib/main.dart').
+      'calves': BodyPart.calves, '비복근': BodyPart.calves, '가자미근': BodyPart.calves,
+                                                                 ^^^^^^^^
+lib/main.dart:87:20:
+Error: The getter 'BodyPart' isn't defined for the type '_BodyAtlasRendererState'.
+ - '_BodyAtlasRendererState' is from 'package:flutter_app/main.dart' ('lib/main.dart').
+      'upperBack': BodyPart.upperBack, '승모근': BodyPart.upperBack, '광배근': BodyPart.upperBack,
+                   ^^^^^^^^
+lib/main.dart:87:47:
+Error: The getter 'BodyPart' isn't defined for the type '_BodyAtlasRendererState'.
+ - '_BodyAtlasRendererState' is from 'package:flutter_app/main.dart' ('lib/main.dart').
+      'upperBack': BodyPart.upperBack, '승모근': BodyPart.upperBack, '광배근': BodyPart.upperBack,
+                                              ^^^^^^^^
+lib/main.dart:87:74:
+Error: The getter 'BodyPart' isn't defined for the type '_BodyAtlasRendererState'.
+ - '_BodyAtlasRendererState' is from 'package:flutter_app/main.dart' ('lib/main.dart').
+      'upperBack': BodyPart.upperBack, '승모근': BodyPart.upperBack, '광배근': BodyPart.upperBack,
+                                                                         ^^^^^^^^
+lib/main.dart:88:17:
+Error: The getter 'BodyPart' isn't defined for the type '_BodyAtlasRendererState'.
+ - '_BodyAtlasRendererState' is from 'package:flutter_app/main.dart' ('lib/main.dart').
+      'glutes': BodyPart.glutes, '대둔근': BodyPart.glutes, '중둔근': BodyPart.glutes,
+                ^^^^^^^^
+lib/main.dart:88:41:
+Error: The getter 'BodyPart' isn't defined for the type '_BodyAtlasRendererState'.
+ - '_BodyAtlasRendererState' is from 'package:flutter_app/main.dart' ('lib/main.dart').
+      'glutes': BodyPart.glutes, '대둔근': BodyPart.glutes, '중둔근': BodyPart.glutes,
+                                        ^^^^^^^^
+lib/main.dart:88:65:
+Error: The getter 'BodyPart' isn't defined for the type '_BodyAtlasRendererState'.
+ - '_BodyAtlasRendererState' is from 'package:flutter_app/main.dart' ('lib/main.dart').
+      'glutes': BodyPart.glutes, '대둔근': BodyPart.glutes, '중둔근': BodyPart.glutes,
+                                                                ^^^^^^^^
+lib/main.dart:89:18:
+Error: The getter 'BodyPart' isn't defined for the type '_BodyAtlasRendererState'.
+ - '_BodyAtlasRendererState' is from 'package:flutter_app/main.dart' ('lib/main.dart').
+      'triceps': BodyPart.triceps, '삼두근': BodyPart.triceps,
+                 ^^^^^^^^
+lib/main.dart:89:43:
+Error: The getter 'BodyPart' isn't defined for the type '_BodyAtlasRendererState'.
+ - '_BodyAtlasRendererState' is from 'package:flutter_app/main.dart' ('lib/main.dart').
+      'triceps': BodyPart.triceps, '삼두근': BodyPart.triceps,
+                                          ^^^^^^^^
+lib/main.dart:90:17:
+Error: The getter 'BodyPart' isn't defined for the type '_BodyAtlasRendererState'.
+ - '_BodyAtlasRendererState' is from 'package:flutter_app/main.dart' ('lib/main.dart').
+      'biceps': BodyPart.biceps, '이두근': BodyPart.biceps,
+                ^^^^^^^^
+lib/main.dart:90:41:
+Error: The getter 'BodyPart' isn't defined for the type '_BodyAtlasRendererState'.
+ - '_BodyAtlasRendererState' is from 'package:flutter_app/main.dart' ('lib/main.dart').
+      'biceps': BodyPart.biceps, '이두근': BodyPart.biceps,
+                                        ^^^^^^^^
+lib/main.dart:91:20:
+Error: The getter 'BodyPart' isn't defined for the type '_BodyAtlasRendererState'.
+ - '_BodyAtlasRendererState' is from 'package:flutter_app/main.dart' ('lib/main.dart').
+      'shoulders': BodyPart.shoulders, '삼각근': BodyPart.shoulders, '전방삼각근': BodyPart.shoulders,
+                   ^^^^^^^^
+lib/main.dart:91:47:
+Error: The getter 'BodyPart' isn't defined for the type '_BodyAtlasRendererState'.
+ - '_BodyAtlasRendererState' is from 'package:flutter_app/main.dart' ('lib/main.dart').
+      'shoulders': BodyPart.shoulders, '삼각근': BodyPart.shoulders, '전방삼각근': BodyPart.shoulders,
+                                              ^^^^^^^^
+lib/main.dart:91:76:
+Error: The getter 'BodyPart' isn't defined for the type '_BodyAtlasRendererState'.
+ - '_BodyAtlasRendererState' is from 'package:flutter_app/main.dart' ('lib/main.dart').
+      'shoulders': BodyPart.shoulders, '삼각근': BodyPart.shoulders, '전방삼각근': BodyPart.shoulders,
+                                                                           ^^^^^^^^
+lib/main.dart:92:15:
+Error: The getter 'BodyPart' isn't defined for the type '_BodyAtlasRendererState'.
+ - '_BodyAtlasRendererState' is from 'package:flutter_app/main.dart' ('lib/main.dart').
+      'neck': BodyPart.neck, '견갑거근': BodyPart.neck,
+              ^^^^^^^^
+lib/main.dart:92:38:
+Error: The getter 'BodyPart' isn't defined for the type '_BodyAtlasRendererState'.
+ - '_BodyAtlasRendererState' is from 'package:flutter_app/main.dart' ('lib/main.dart').
+      'neck': BodyPart.neck, '견갑거근': BodyPart.neck,
+                                     ^^^^^^^^
+lib/main.dart:93:14:
+Error: The getter 'BodyPart' isn't defined for the type '_BodyAtlasRendererState'.
+ - '_BodyAtlasRendererState' is from 'package:flutter_app/main.dart' ('lib/main.dart').
+      'abs': BodyPart.abs, '복직근': BodyPart.abs,
+             ^^^^^^^^
+lib/main.dart:93:35:
+Error: The getter 'BodyPart' isn't defined for the type '_BodyAtlasRendererState'.
+ - '_BodyAtlasRendererState' is from 'package:flutter_app/main.dart' ('lib/main.dart').
+      'abs': BodyPart.abs, '복직근': BodyPart.abs,
+                                  ^^^^^^^^
+lib/main.dart:94:19:
+Error: The getter 'BodyPart' isn't defined for the type '_BodyAtlasRendererState'.
+ - '_BodyAtlasRendererState' is from 'package:flutter_app/main.dart' ('lib/main.dart').
+      'obliques': BodyPart.obliques, '외복사근': BodyPart.obliques, '내복사근': BodyPart.obliques,
+                  ^^^^^^^^
+lib/main.dart:94:46:
+Error: The getter 'BodyPart' isn't defined for the type '_BodyAtlasRendererState'.
+ - '_BodyAtlasRendererState' is from 'package:flutter_app/main.dart' ('lib/main.dart').
+      'obliques': BodyPart.obliques, '외복사근': BodyPart.obliques, '내복사근': BodyPart.obliques,
+                                             ^^^^^^^^
+lib/main.dart:94:73:
+Error: The getter 'BodyPart' isn't defined for the type '_BodyAtlasRendererState'.
+ - '_BodyAtlasRendererState' is from 'package:flutter_app/main.dart' ('lib/main.dart').
+      'obliques': BodyPart.obliques, '외복사근': BodyPart.obliques, '내복사근': BodyPart.obliques,
+                                                                        ^^^^^^^^
+lib/main.dart:105:11:
+Error: The getter 'BodyPart' isn't defined for the type '_BodyAtlasRendererState'.
+ - '_BodyAtlasRendererState' is from 'package:flutter_app/main.dart' ('lib/main.dart').
+          BodyPart.glutes, BodyPart.hamstrings, BodyPart.calves,
+          ^^^^^^^^
+lib/main.dart:105:28:
+Error: The getter 'BodyPart' isn't defined for the type '_BodyAtlasRendererState'.
+ - '_BodyAtlasRendererState' is from 'package:flutter_app/main.dart' ('lib/main.dart').
+          BodyPart.glutes, BodyPart.hamstrings, BodyPart.calves,
+                           ^^^^^^^^
+lib/main.dart:105:49:
+Error: The getter 'BodyPart' isn't defined for the type '_BodyAtlasRendererState'.
+ - '_BodyAtlasRendererState' is from 'package:flutter_app/main.dart' ('lib/main.dart').
+          BodyPart.glutes, BodyPart.hamstrings, BodyPart.calves,
+                                                ^^^^^^^^
+lib/main.dart:106:11:
+Error: The getter 'BodyPart' isn't defined for the type '_BodyAtlasRendererState'.
+ - '_BodyAtlasRendererState' is from 'package:flutter_app/main.dart' ('lib/main.dart').
+          BodyPart.upperBack, BodyPart.lowerBack, BodyPart.triceps
+          ^^^^^^^^
+lib/main.dart:106:31:
+Error: The getter 'BodyPart' isn't defined for the type '_BodyAtlasRendererState'.
+ - '_BodyAtlasRendererState' is from 'package:flutter_app/main.dart' ('lib/main.dart').
+          BodyPart.upperBack, BodyPart.lowerBack, BodyPart.triceps
+                              ^^^^^^^^
+lib/main.dart:106:51:
+Error: The getter 'BodyPart' isn't defined for the type '_BodyAtlasRendererState'.
+ - '_BodyAtlasRendererState' is from 'package:flutter_app/main.dart' ('lib/main.dart').
+          BodyPart.upperBack, BodyPart.lowerBack, BodyPart.triceps
+                                                  ^^^^^^^^
+lib/main.dart:117:37:
+Error: The getter 'BodyView' isn't defined for the type '_BodyAtlasRendererState'.
+ - '_BodyAtlasRendererState' is from 'package:flutter_app/main.dart' ('lib/main.dart').
+          bodyView: needsBackView ? BodyView.back : BodyView.front,
+                                    ^^^^^^^^
+lib/main.dart:117:53:
+Error: The getter 'BodyView' isn't defined for the type '_BodyAtlasRendererState'.
+ - '_BodyAtlasRendererState' is from 'package:flutter_app/main.dart' ('lib/main.dart').
+          bodyView: needsBackView ? BodyView.back : BodyView.front,
+                                                    ^^^^^^^^
+lib/main.dart:112:16:
+Error: The method 'BodyAtlas' isn't defined for the type '_BodyAtlasRendererState'.
+ - '_BodyAtlasRendererState' is from 'package:flutter_app/main.dart' ('lib/main.dart').
+        child: BodyAtlas(
+               ^^^^^^^^^
+Error: Compilation failed.
+  Command: /opt/homebrew/share/flutter/bin/cache/dart-sdk/bin/dart compile js --platform-binaries=/opt/homebrew/share/flutter/bin/cache/flutter_web_sdk/kernel --invoker=flutter_tool -Ddart.vm.product=true -DFLUTTER_VERSION=3.41.4 -DFLUTTER_CHANNEL=stable -DFLUTTER_GIT_URL=https://github.com/flutter/flutter.git -DFLUTTER_FRAMEWORK_REVISION=ff37bef603 -DFLUTTER_ENGINE_REVISION=e4b8dca3f1 -DFLUTTER_DART_VERSION=3.11.1 -DFLUTTER_WEB_USE_SKIA=true -DFLUTTER_WEB_USE_SKWASM=false -DFLUTTER_WEB_CANVASKIT_URL=https://www.gstatic.com/flutter-canvaskit/e4b8dca3f1b4ede4c30371002441c88c12187ed6/ --native-null-assertions --no-source-maps -O4 --minify -o /Volumes/김ssd/앱개발/ROM 측정기/flutter_app/.dart_tool/flutter_build/1a65c158577eb5081f916017cc1395f5/app.dill --packages=/Volumes/김ssd/앱개발/ROM 측정기/flutter_app/.dart_tool/package_config.json --cfe-only /Volumes/김ssd/앱개발/ROM 측정기/flutter_app/.dart_tool/flutter_build/1a65c158577eb5081f916017cc1395f5/main.dart
+#0      RunResult.throwException (package:flutter_tools/src/base/process.dart:153:5)
+#1      _DefaultProcessUtils.run (package:flutter_tools/src/base/process.dart:379:19)
+<asynchronous suspension>
+#2      Dart2JSTarget.build (package:flutter_tools/src/build_system/targets/web.dart:208:5)
+<asynchronous suspension>
+#3      _BuildInstance._invokeInternal (package:flutter_tools/src/build_system/build_system.dart:937:9)
+<asynchronous suspension>
+#4      Future.wait.<anonymous closure> (dart:async/future.dart:546:21)
+<asynchronous suspension>
+#5      _BuildInstance.invokeTarget (package:flutter_tools/src/build_system/build_system.dart:875:32)
+<asynchronous suspension>
+#6      Future.wait.<anonymous closure> (dart:async/future.dart:546:21)
+<asynchronous suspension>
+#7      _BuildInstance.invokeTarget (package:flutter_tools/src/build_system/build_system.dart:875:32)
+<asynchronous suspension>
+#8      FlutterBuildSystem.build (package:flutter_tools/src/build_system/build_system.dart:684:16)
+<asynchronous suspension>
+#9      WebBuilder.buildWeb (package:flutter_tools/src/web/compile.dart:107:34)
+<asynchronous suspension>
+#10     BuildWebCommand.runCommand (package:flutter_tools/src/commands/build_web.dart:300:5)
+<asynchronous suspension>
+#11     FlutterCommand.run.<anonymous closure> (package:flutter_tools/src/runner/flutter_command.dart:1590:27)
+<asynchronous suspension>
+#12     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:154:19)
+<asynchronous suspension>
+#13     CommandRunner.runCommand (package:args/command_runner.dart:212:13)
+<asynchronous suspension>
+#14     FlutterCommandRunner.runCommand.<anonymous closure> (package:flutter_tools/src/runner/flutter_command_runner.dart:496:9)
+<asynchronous suspension>
+#15     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:154:19)
+<asynchronous suspension>
+#16     FlutterCommandRunner.runCommand (package:flutter_tools/src/runner/flutter_command_runner.dart:431:5)
+<asynchronous suspension>
+#17     FlutterCommandRunner.run.<anonymous closure> (package:flutter_tools/src/runner/flutter_command_runner.dart:307:33)
+<asynchronous suspension>
+#18     run.<anonymous closure>.<anonymous closure> (package:flutter_tools/runner.dart:104:11)
+<asynchronous suspension>
+#19     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:154:19)
+<asynchronous suspension>
+#20     main (package:flutter_tools/executable.dart:103:3)
+<asynchronous suspension>
+
+Compiling lib/main.dart for the Web...                             23.0s
+Error: Failed to compile application for the Web.

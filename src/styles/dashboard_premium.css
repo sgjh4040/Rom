@@ -1,0 +1,323 @@
+/* dashboard_premium.css — CES 대시보드 (다크 뉴모피즘) */
+
+.ces-dashboard {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    height: 100vh;
+    background: #e0e5ec;
+    overflow: hidden;
+}
+
+.ces-sidebar {
+    background: linear-gradient(160deg, #2a3040 0%, #1a1d24 100%);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    position: relative;
+    overflow-y: auto;
+    box-shadow: 6px 0 16px rgba(0, 0, 0, 0.15);
+}
+
+.sidebar-logo {
+    font-size: 1.1rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    background: var(--bg);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-raised-sm);
+    color: var(--text-primary) !important;
+}
+
+.sidebar-logo span {
+    color: var(--primary);
+}
+
+.sidebar-menu-btn {
+    width: 24px;
+    height: 16px;
+    border-top: 2.5px solid var(--text-secondary);
+    border-bottom: 2.5px solid var(--text-secondary);
+    position: relative;
+    cursor: pointer;
+}
+
+.sidebar-menu-btn::after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 0;
+    right: 0;
+    height: 2.5px;
+    background: var(--text-secondary);
+}
+
+.human-anatomy-box {
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0.5rem 0;
+    overflow: hidden;
+    position: relative;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.3), inset -3px -3px 6px rgba(255, 255, 255, 0.05);
+}
+
+.human-anatomy-img {
+    width: 140%;
+    height: auto;
+    opacity: 0.8;
+    mix-blend-mode: screen;
+}
+
+.anatomy-overlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.muscle-highlight {
+    position: absolute;
+    padding: 0.3rem 0.6rem;
+    background: rgba(240, 62, 62, 0.9);
+    color: white;
+    border-radius: 4px;
+    font-size: 0.65rem;
+    font-weight: 800;
+    box-shadow: 0 0 10px rgba(240, 62, 62, 0.5);
+    animation: pulse-red 2s infinite;
+    z-index: 10;
+}
+
+@keyframes pulse-red {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.9;
+    }
+
+    50% {
+        transform: scale(1.05);
+        opacity: 1;
+    }
+}
+
+.sidebar-stats {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    padding: 1.25rem 0;
+}
+
+.sub-label {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.25rem;
+}
+
+.stat-main-val {
+    font-size: 1.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+    color: var(--primary);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.timer-actions {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.btn-timer {
+    flex: 1;
+    padding: 0.5rem;
+    border-radius: var(--radius-sm);
+    border: none;
+    font-weight: 800;
+    font-size: 0.7rem;
+    cursor: pointer;
+    box-shadow: var(--shadow-raised-sm);
+    background: var(--bg);
+    color: var(--text-secondary);
+}
+
+.btn-timer.is-running {
+    color: var(--danger);
+    box-shadow: var(--shadow-pressed);
+}
+
+.btn-timer.primary {
+    color: var(--success);
+}
+
+/* Main Panel Header */
+.main-user-info {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-align: right;
+}
+
+.user-name {
+    font-size: 0.9rem;
+    font-weight: 800;
+    color: var(--text-primary);
+}
+
+.user-meta {
+    font-size: 0.65rem;
+    color: var(--text-secondary);
+    font-weight: 700;
+}
+
+.user-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--bg);
+    box-shadow: var(--shadow-raised-sm);
+    border: 2px solid white;
+    overflow: hidden;
+}
+
+/* CES Stage Tabs (Dark Neumorphic) */
+.ces-stage-tabs {
+    background: rgba(0, 0, 0, 0.25);
+    padding: 0.35rem;
+    border-radius: 10px;
+    display: flex;
+    gap: 0.25rem;
+    margin-bottom: 1.5rem;
+    box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.3), inset -2px -2px 4px rgba(255, 255, 255, 0.05);
+}
+
+.ces-tab-btn {
+    flex: 1;
+    background: transparent;
+    border: none;
+    border-radius: 8px;
+    padding: 0.6rem 0.25rem;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.65rem;
+    font-weight: 800;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.ces-tab-btn.is-active {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3), -3px -3px 6px rgba(255, 255, 255, 0.05);
+}
+
+.sidebar-actions {
+    display: flex;
+    gap: 0.75rem;
+    padding-top: 1.25rem;
+    margin-top: auto;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.btn-complete {
+    flex: 1;
+    background: var(--bg);
+    color: #2d3748;
+    border-radius: 10px;
+    padding: 0.85rem;
+    font-weight: 800;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: none;
+    cursor: pointer;
+    box-shadow: var(--shadow-raised-sm);
+}
+
+.btn-close-circle {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.08);
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    cursor: pointer;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3), -3px -3px 6px rgba(255, 255, 255, 0.05);
+}
+
+.btn-close-circle:active {
+    box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.3), inset -2px -2px 4px rgba(255, 255, 255, 0.05);
+}
+
+/* CES Main Panel */
+.ces-main {
+    padding: 2rem;
+    overflow-y: auto;
+}
+
+.muscle-balance-box {
+    margin-top: 2rem;
+    background: var(--bg);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-raised);
+}
+
+.balance-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.balance-card {
+    background: var(--bg);
+    border-radius: var(--radius-md);
+    padding: 1rem;
+    box-shadow: var(--shadow-raised-sm);
+}
+
+.balance-title {
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+}
+
+@media (max-width: 1024px) {
+    .ces-dashboard {
+        grid-template-columns: 280px 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .ces-dashboard {
+        grid-template-columns: 1fr;
+        height: auto;
+        overflow: visible;
+    }
+
+    .ces-sidebar {
+        height: auto;
+        padding: 1.5rem;
+    }
+}

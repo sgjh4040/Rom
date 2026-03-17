@@ -1,0 +1,13 @@
+/* index.css — 디자인 시스템 진입점 (import only) */
+@import './styles/tokens.css';
+@import './styles/base.css';
+@import './styles/components.css';
+@import './styles/utilities.css';
+@import './styles/responsive.css';
+@import './styles/dashboard.css';
+@import './styles/dashboard_premium.css';
+@import './styles/ces_exercise.css';
+@import './styles/ces_player.css';
+@import './styles/rom_immersive.css';
+@import './styles/fancy_selector.css';
+@import './styles/neumorphism.css';

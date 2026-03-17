@@ -1,0 +1,96 @@
+/* responsive.css — 뉴모피즘 반응형 최적화 */
+
+/* ── 모바일 (≤ 479px) ─────────────────────────────── */
+@media (max-width: 479px) {
+    .container {
+        padding: 1rem 1rem 5.5rem;
+    }
+
+    h1 {
+        font-size: 1.35rem;
+    }
+
+    h2 {
+        font-size: 1.1rem;
+    }
+
+    .card,
+    .page-header {
+        padding: 1.05rem;
+        border-radius: 14px;
+        box-shadow: var(--shadow-raised-sm);
+    }
+
+    .grid-cols-2 {
+        grid-template-columns: 1fr;
+    }
+
+    /* 하단 sticky 액션 바 (Neumorphic Float) */
+    .action-bar {
+        position: fixed;
+        bottom: 1rem;
+        left: 1rem;
+        right: 1rem;
+        padding: 0.75rem 1rem;
+        background: var(--bg);
+        border-radius: var(--radius-md);
+        z-index: 100;
+        box-shadow: var(--shadow-raised);
+        gap: 0.75rem;
+        margin-top: 0;
+        border: none;
+    }
+
+    .action-bar .btn {
+        font-size: 0.875rem;
+    }
+}
+
+/* ── 아이패드 소형 (480px – 767px) ──────────────────── */
+@media (min-width: 480px) and (max-width: 767px) {
+    .container {
+        padding: 1.25rem 1.5rem 5rem;
+    }
+
+    .action-bar {
+        position: fixed;
+        bottom: 1.25rem;
+        left: 1.5rem;
+        right: 1.5rem;
+        padding: 0.8rem 1.5rem;
+        background: var(--bg);
+        border-radius: var(--radius-lg);
+        z-index: 100;
+        box-shadow: var(--shadow-raised);
+        gap: 1rem;
+        margin-top: 0;
+        border: none;
+    }
+}
+
+/* ── 아이패드 대형 (768px – 1023px) ─────────────────── */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .container {
+        padding: 1.75rem 2rem 4rem;
+        max-width: 860px;
+    }
+
+    .page-header {
+        padding: 1.75rem;
+    }
+}
+
+/* ── 데스크톱 (1024px+) ──────────────────────────────── */
+@media (min-width: 1024px) {
+    .container {
+        max-width: 900px;
+        padding: 2.5rem 2rem 4rem;
+    }
+}
+
+/* ── 안전 영역 (Safe Area) ────────────────────────── */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+    .action-bar {
+        bottom: calc(1rem + env(safe-area-inset-bottom));
+    }
+}
