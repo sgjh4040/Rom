@@ -171,6 +171,7 @@ export const CesProtocol: React.FC = () => {
                     </select>
                     <div className="main-user-info">
                         <div>
+                            {/*환자 이름 예시, 필요시 데이타 불러오도록 수정*/}
                             <p className="user-name">Richard Armitage</p>
                             <p className="user-meta">DEMO ACCOUNT</p>
                         </div>

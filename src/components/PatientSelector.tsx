@@ -4,16 +4,22 @@ import type { Patient } from '../lib/romTypes';
 interface PatientSelectorProps {
     patients: Patient[];
     patientId?: string;
+    //isManaging: 환자 관리 모드인지 여부    
     isManaging: boolean;
-    //isManaging: 환자 관리 모드인지 여부       
+
+    //setIsManaging: 환자 관리 모드 변경
     setIsManaging: (val: boolean) => void;
+
     //handleSelectPatient: 환자 선택
     handleSelectPatient: (p: Patient) => void;
+
     //handleDeletePatient: 환자 삭제
     handleDeletePatient: (id: string) => void;
+
     //handleNewPatient: 새 환자 등록
     handleNewPatient: () => void;
 }
+
 
 export const PatientSelector: React.FC<PatientSelectorProps> = ({
     patients, patientId, isManaging, setIsManaging,
