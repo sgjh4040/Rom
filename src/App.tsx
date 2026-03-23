@@ -1,14 +1,15 @@
-import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Index } from './pages/Index';
-import { RomMeasurement } from './pages/RomMeasurement';
-import { Results } from './pages/Results';
-import { CesProtocol } from './pages/CesProtocol';
-import { CesPlayerPage } from './pages/CesPlayerPage';
-import { CesFlutterPage } from './pages/CesFlutterPage';
-import { Settings } from './pages/Settings';
-import { Trends } from './pages/Trends';
-import { Lab } from './pages/Lab';
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Index } from "./pages/Index";
+import { RomMeasurement } from "./pages/RomMeasurement";
+import { Results } from "./pages/Results";
+import { CesProtocol } from "./pages/CesProtocol";
+import { CesPlayerPage } from "./pages/CesPlayerPage";
+import { CesFlutterPage } from "./pages/CesFlutterPage";
+import { Settings } from "./pages/Settings";
+import { Trends } from "./pages/Trends";
+import { Lab } from "./pages/Lab";
+import { CesInfo } from "./pages/CesInfo";
 
 const App: React.FC = () => {
   return (
@@ -23,6 +24,7 @@ const App: React.FC = () => {
         <Route path="/settings" element={<Settings />} />
         <Route path="/trends" element={<Trends />} />
         <Route path="/lab" element={<Lab />} />
+        <Route path="/cesinfo" element={<CesInfo />} />
       </Routes>
     </BrowserRouter>
   );

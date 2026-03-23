@@ -101,6 +101,7 @@ export const Index: React.FC = () => {
             <div className="container pb-10">
                 <div className="page-header">
                      {/* 세팅 페이지로 가는 버튼 */}
+                    <button onClick={() => navigate('/cesinfo')} className="btn-settings-top mr-12" style={{ marginRight: '40px' }}>📚</button>
                     <button onClick={() => navigate('/settings')} className="btn-settings-top">⚙️</button>
                     <h1>ROM 측정 시스템</h1>
                     <p>평가 및 재활 처방</p>
