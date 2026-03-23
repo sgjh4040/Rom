@@ -141,8 +141,9 @@ export const CesProtocol: React.FC = () => {
                             <p className="stat-sub-val" style={{ color: '#63E6BE' }}>{getExMeta(currentEx)}</p>
                         </div>
                     )}
-                    <div><p className="sub-label">Line</p><p className="stat-sub-val" style={{ letterSpacing: '0.1em' }}>Front Line</p></div>
-                    <div><p className="sub-label">Systems</p><p className="stat-sub-val">Fascia System<br />Nervous Systems</p></div>
+                    {/* [PRD 4-2] Line/Systems 비표시 (사용자 요청으로 주석 처리) */}
+                    {/* <div><p className="sub-label">Line</p><p className="stat-sub-val" style={{ letterSpacing: '0.1em' }}>Front Line</p></div> */}
+                    {/* <div><p className="sub-label">Systems</p><p className="stat-sub-val">Fascia System<br />Nervous Systems</p></div> */}
                 </div>
 
                 {/* 단계 탭 */}
