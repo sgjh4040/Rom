@@ -11,12 +11,14 @@ const MOVEMENT_ICONS: Record<string, string> = {
     inversion: '◁', eversion: '▷',
 };
 
+
 interface MovementSidebarProps {
     joint: Joint;
     measurements: Record<string, number>;
     activeId: string;
     onSelectActiveId: (id: string) => void;
 }
+
 
 export const MovementSidebar: React.FC<MovementSidebarProps> = ({ joint, measurements, activeId, onSelectActiveId }) => {
     return (

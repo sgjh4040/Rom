@@ -8,6 +8,7 @@ import { CesPlayerPage } from './pages/CesPlayerPage';
 import { CesFlutterPage } from './pages/CesFlutterPage';
 import { Settings } from './pages/Settings';
 import { Trends } from './pages/Trends';
+import { Lab } from './pages/Lab';
 
 const App: React.FC = () => {
   return (
@@ -21,6 +22,7 @@ const App: React.FC = () => {
         <Route path="/ces-flutter" element={<CesFlutterPage />} />
         <Route path="/settings" element={<Settings />} />
         <Route path="/trends" element={<Trends />} />
+        <Route path="/lab" element={<Lab />} />
       </Routes>
     </BrowserRouter>
   );

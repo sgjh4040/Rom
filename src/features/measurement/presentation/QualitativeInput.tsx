@@ -6,6 +6,7 @@ interface QualitativeInputProps {
     label: string;
 }
 
+// 질적 입력
 export const QualitativeInput: React.FC<QualitativeInputProps> = ({
     value, onChange, label
 }) => {

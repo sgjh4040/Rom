@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import type { Movement } from '../../../lib/romData';
 
+// 각도 표시 패널
 interface AngleDisplayPanelProps {
     activeMov: Movement | undefined;
     activeVal: number;

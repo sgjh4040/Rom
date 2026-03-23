@@ -16,7 +16,7 @@ interface MovementListSidebarProps {
     activeId: string;
     onSelectActiveId: (id: string) => void;
 }
-
+// 동작 목록 사이드바
 export const MovementListSidebar: React.FC<MovementListSidebarProps> = ({
     joint,
     measurements,
