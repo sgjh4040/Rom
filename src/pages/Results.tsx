@@ -211,12 +211,6 @@ export const Results: React.FC = () => {
             >
               🏋️ CES 재활 시작
             </button>
-            <button
-              className="btn btn-secondary"
-              onClick={() => navigate("/cesinfo")}
-            >
-              📚 CES 정보 보기
-            </button>
             <button className="btn btn-outline" onClick={() => navigate("/")}>
               🏠 홈으로
             </button>
