@@ -47,7 +47,7 @@ export const BodyAnatomySvg: React.FC<BodyAnatomySvgProps> = ({
     >
       <iframe
         ref={iframeRef}
-        src="/flutter_atlas/index.html"
+        src={`${import.meta.env.BASE_URL}flutter_atlas/index.html`}
         style={{
           width: "100%",
           height: "100%",
