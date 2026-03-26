@@ -192,7 +192,8 @@ export const Index: React.FC = () => {
                       className={`btn ${selected ? "btn-primary" : "btn-outline"}`}
                       onClick={() => setSideMode(mode)}
                     >
-                      {selected ? "✓ " : ""}{mode}
+                      {selected ? "✓ " : ""}
+                      {mode}
                     </button>
                   );
                 })}
