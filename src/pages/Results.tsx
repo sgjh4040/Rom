@@ -188,7 +188,7 @@ export const Results: React.FC = () => {
         </div>
 
         <div style={{ marginTop: "2rem" }}>
-          <h2 className="mb-4">📋 맞춤 재활 가이드</h2>
+          {/* <h2 className="mb-4">📋 맞춤 재활 가이드</h2>
           <div className="grid grid-cols-2 gap-4">
             {(stretches.length > 0 ? stretches : [FALLBACK_STRETCHING]).map(
               (ex) => (
@@ -203,7 +203,7 @@ export const Results: React.FC = () => {
                 <ExerciseCard key={ex.id} exercise={ex} />
               ),
             )}
-          </div>
+          </div> */}
           <div className="action-bar">
             <button
               className="btn btn-primary"
