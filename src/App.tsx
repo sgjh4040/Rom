@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import { Index } from "./pages/Index";
 import { RomMeasurement } from "./pages/RomMeasurement";
 import { Results } from "./pages/Results";
@@ -13,7 +13,7 @@ import { CesInfo } from "./pages/CesInfo";
 
 const App: React.FC = () => {
   return (
-    <BrowserRouter basename={import.meta.env.BASE_URL}>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<Index />} />
         <Route path="/measure" element={<RomMeasurement />} />
@@ -26,7 +26,7 @@ const App: React.FC = () => {
         <Route path="/lab" element={<Lab />} />
         <Route path="/cesinfo" element={<CesInfo />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 
