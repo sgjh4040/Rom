@@ -17,28 +17,43 @@ export const BodyAnatomySvg: React.FC<BodyAnatomySvgProps> = ({
   const lastMsgRef = useRef<string>("");
   console.log("최종 highlightIds:", highlightIds);
   // Flutter 쪽에 데이터를 전송하는 핵심 함수
-  const syncState = useCallback(() => {
-    if (!iframeRef.current || !iframeRef.current.contentWindow) return;
+  const syncState = useCallback(
+    (force = false) => {
+      if (!iframeRef.current || !iframeRef.current.contentWindow) return;
 
-    console.log("PHASE_META:", PHASE_META);
-    const color = cesPhase ? PHASE_META[cesPhase].color : "#ff0000";
-    console.log("color:", color);
-    const muscles = highlightIds.join(",");
-    console.log("muscles:", muscles);
-    const msgStr = `${muscles}|${color}`;
-    console.log("msgStr1:", msgStr);
-    // 이전 메시지와 동일하면 중복 전송하지 않음 (네트워크 오버헤드 방지)
-    if (lastMsgRef.current === msgStr) return;
+      console.log("PHASE_META:", PHASE_META);
+      const color = cesPhase ? PHASE_META[cesPhase].color : "#ff0000";
+      console.log("color:", color);
+      const muscles = highlightIds.join(",");
+      console.log("muscles:", muscles);
+      const msgStr = `${muscles}|${color}`;
+      console.log("msgStr1:", msgStr);
 
-    // Flutter 쪽에 데이터를 전송
-    iframeRef.current.contentWindow.postMessage({ muscles, color }, "*");
-    lastMsgRef.current = msgStr;
-    console.log("msgStr2:", msgStr);
-  }, [highlightIds, cesPhase]);
+      // 이전 메시지와 동일하면 중복 전송하지 않음 (단, force가 true면 무조건 전송)
+      if (!force && lastMsgRef.current === msgStr) return;
 
-  // Prop 변경 시 즉각 반영
+      // Flutter 쪽에 데이터를 전송
+      iframeRef.current.contentWindow.postMessage({ muscles, color }, "*");
+      lastMsgRef.current = msgStr;
+      console.log("msgStr2:", msgStr);
+    },
+    [highlightIds, cesPhase],
+  );
+
+  // Prop 변경 시 즉각 반영 및 로드 대기(Flutter 엔진 부팅 시간 보완)
   useEffect(() => {
-    syncState();
+    syncState(); // 즉시 1회 시도
+
+    // Flutter 엔진이 비동기로 늦게 켜지는 문제를 방지하기 위해 
+    // 처음 3초간 0.5초 간격으로 계속 `postMessage` 전송을 보장합니다.
+    let count = 0;
+    const interval = setInterval(() => {
+      syncState(true); // 강제 전송
+      count++;
+      if (count > 6) clearInterval(interval); // 6회(3초) 이후 중단
+    }, 500);
+
+    return () => clearInterval(interval);
   }, [syncState]);
 
   return (
@@ -60,7 +75,7 @@ export const BodyAnatomySvg: React.FC<BodyAnatomySvgProps> = ({
           background: "transparent",
         }}
         title="Flutter Body Atlas"
-        onLoad={syncState} // 로딩 완료 시점에 첫 데이터 동기화
+        onLoad={() => syncState(true)} // 로딩 완료 시점에 첫 데이터 동기화 강제
       />
     </div>
   );
