@@ -9,12 +9,14 @@ import type { CesExercise, CesAnalysisResult } from './ces/cesTypes';
 import type { RomSession, Side } from './romTypes';
 import { JOINTS } from './romData';
 
-/** 중복 운동 제거 헬퍼 */
+/** 중복 운동 제거 헬퍼 (id 또는 name 하나라도 겹치면 제거) */
 const dedup = (exercises: CesExercise[]): CesExercise[] => {
-    const seen = new Set<string>();
+    const seenIds = new Set<string>();
+    const seenNames = new Set<string>();
     return exercises.filter((ex) => {
-        if (seen.has(ex.id)) return false;
-        seen.add(ex.id);
+        if (seenIds.has(ex.id) || seenNames.has(ex.name)) return false;
+        seenIds.add(ex.id);
+        seenNames.add(ex.name);
         return true;
     });
 };
