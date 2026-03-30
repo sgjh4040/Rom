@@ -1,6 +1,8 @@
 // CesVideoPlayer.tsx — A 영역: 영상 플레이어 (PRD 4-0: 200줄 이하)
 import React, { useRef, useEffect } from 'react';
 
+import { YoutubePlayer } from './YoutubePlayer';
+
 interface CesVideoPlayerProps {
     videoUrl: string;
     nextVideoUrl?: string;
@@ -27,19 +29,25 @@ export const CesVideoPlayer: React.FC<CesVideoPlayerProps> = ({
     const bgIdx = Math.abs(exerciseName.charCodeAt(0)) % 4;
     const bgColor = PLACEHOLDER_COLORS[bgIdx] ?? '#1a1a2e';
 
+    const isYoutube = videoUrl && ((videoUrl.length === 11 && !videoUrl.includes('.')) || videoUrl.includes('youtu'));
+
     return (
         <div style={{ position: 'relative', width: '100%', background: bgColor, borderRadius: '12px', overflow: 'hidden', aspectRatio: '16/9' }}>
             {videoUrl ? (
-                <video
-                    ref={videoRef}
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                >
-                    <source src={videoUrl} type="video/mp4" />
-                </video>
+                isYoutube ? (
+                    <YoutubePlayer youtubeId={videoUrl} title={exerciseName} />
+                ) : (
+                    <video
+                        ref={videoRef}
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                    >
+                        <source src={videoUrl} type="video/mp4" />
+                    </video>
+                )
             ) : (
                 /* 영상 없을 때 플레이스홀더 */
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100%', gap: '1rem' }}>

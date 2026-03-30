@@ -105,8 +105,7 @@ export const CesProtocol: React.FC = () => {
   const currentEx = exercises[activeIndex] || exercises[0];
 
   // 운동 이름에서 매칭 가능한 한국어 근육 키워드를 뽑아냅니다.
-  const targetMuscles = useMemo(() => {
-    if (!currentEx) return ["코어"];
+  const getTargetMuscles = useCallback((name: string) => {
     const keywords = [
       "소흉근",
       "대흉근",
@@ -134,10 +133,49 @@ export const CesProtocol: React.FC = () => {
       "삼각근",
       "장요근",
     ];
-    console.log("currentEx:", currentEx);
-    const found = keywords.filter((k) => currentEx.name.includes(k));
+    const found = keywords.filter((k) => name.includes(k));
     return found.length > 0 ? found : ["코어"]; // fallback
-  }, [currentEx]);
+  }, []);
+
+  const targetMuscles = useMemo(() => {
+    if (!currentEx) return ["코어"];
+    return getTargetMuscles(currentEx.name);
+  }, [currentEx, getTargetMuscles]);
+
+  // ── 데이터 연동: 4단계 운동을 플레이어 규격에 맞게 병합 ──
+  const handleStartPlayer = () => {
+    let stepCount = 0;
+    const routineExercises: any[] = [];
+
+    const mapExercises = (phaseArr: any[], phaseName: string) => {
+      phaseArr.forEach((ex) => {
+        routineExercises.push({
+          step: ++stepCount,
+          exerciseName: ex.name,
+          videoUrl: ex.youtubeId || "",
+          durationSeconds: ex.holdSeconds || (ex.reps ? ex.reps * 3 : 30),
+          cesPhase: phaseName,
+          targetSvgIds: getTargetMuscles(ex.name),
+        });
+      });
+    };
+
+    mapExercises(analysis.inhibit, "Inhibit");
+    mapExercises(analysis.lengthen, "Lengthen");
+    mapExercises(analysis.activate, "Activate");
+    mapExercises(analysis.integrate, "Integrate");
+
+    const customRoutine = {
+      routineId: `routine_${Date.now()}`,
+      totalDurationSeconds: routineExercises.reduce(
+        (acc, curr) => acc + curr.durationSeconds,
+        0,
+      ),
+      exercises: routineExercises,
+    };
+
+    navigate("/ces-player", { state: { customRoutine } });
+  };
 
   console.log("최종 targetMuscles:", targetMuscles);
   return (
@@ -223,6 +261,9 @@ export const CesProtocol: React.FC = () => {
 
         {/* 하단 액션 */}
         <div className="sidebar-actions">
+          <button className="btn-complete" onClick={handleStartPlayer}>
+            Start Player <span>›</span>
+          </button>
           <button className="btn-complete" onClick={() => navigate("/")}>
             Complete Exercise <span>›</span>
           </button>

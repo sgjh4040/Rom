@@ -91,20 +91,21 @@ export const useCesPlayer = (routine: CesRoutine): UseCesPlayerReturn => {
             return;
         }
         timerRef.current = setInterval(() => {
-            setCountdown(prev => {
-                if (prev <= 3 && !beepFiredRef.current) {
-                    beepFiredRef.current = true;
-                    playBeep();
-                }
-                if (prev <= 1) {
-                    advanceStep();
-                    return 0;
-                }
-                return prev - 1;
-            });
+            setCountdown(prev => Math.max(0, prev - 1));
         }, 1000);
         return () => { if (timerRef.current) clearInterval(timerRef.current); };
-    }, [isPaused, isFinished, advanceStep]);
+    }, [isPaused, isFinished]);
+
+    /** 카운트다운 완료 시 스텝 전환 부작용 처리 */
+    useEffect(() => {
+        if (countdown <= 3 && countdown > 0 && !beepFiredRef.current) {
+            beepFiredRef.current = true;
+            playBeep();
+        }
+        if (countdown === 0 && !isFinished && !isPaused) {
+            advanceStep();
+        }
+    }, [countdown, isFinished, isPaused, advanceStep]);
 
     // 마운트 시 다음 영상 prefetch
     useEffect(() => {

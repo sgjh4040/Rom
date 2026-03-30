@@ -1,19 +1,25 @@
 // CesPlayerPage.tsx — NTC 스타일 CES 플레이어 메인 페이지 (PRD 4-0: 200줄 이하)
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { useCesPlayer } from '../core/utils/useCesPlayer';
 import { CesVideoPlayer } from '../core/components/CesVideoPlayer';
 import { CesPlayerController } from '../core/components/CesPlayerController';
 import { BodyAnatomySvg } from '../core/components/BodyAnatomySvg';
 import { MOCK_ROUTINE, PHASE_META } from '../lib/ces/CesPlayerTypes';
+import type { CesRoutine, CesExerciseStep, CesPhase } from '../lib/ces/CesPlayerTypes';
 
 export const CesPlayerPage: React.FC = () => {
     const navigate = useNavigate();
+    const location = useLocation();
+    
+    // 이전 페이지에서 넘어온 실제 루틴이 있으면 사용, 없으면 데모 루틴 표출
+    const customRoutine = (location.state?.customRoutine as CesRoutine) || MOCK_ROUTINE;
+
     const {
         currentStep, nextStep, countdown, isPaused,
         progress, stepProgress, stepIndex, totalSteps,
         isFinished, togglePause, goToStep, restart,
-    } = useCesPlayer(MOCK_ROUTINE);
+    } = useCesPlayer(customRoutine);
 
     if (isFinished) {
         return (
@@ -43,13 +49,13 @@ export const CesPlayerPage: React.FC = () => {
                             <span>● medicalmotion</span>
                         </div>
                         <div className="step-dots">
-                            {MOCK_ROUTINE.exercises.map((_, i) => (
+                            {customRoutine.exercises.map((_, i) => (
                                 <button key={i} onClick={() => goToStep(i)}
                                     className={`step-dot ${i === stepIndex ? 'is-active' : ''}`}
                                     style={{
                                         width: i === stepIndex ? '24px' : '8px',
                                         background: i === stepIndex
-                                            ? PHASE_META[MOCK_ROUTINE.exercises[i].cesPhase].color
+                                            ? PHASE_META[customRoutine.exercises[i].cesPhase].color
                                             : i < stepIndex ? 'rgba(255,255,255,0.6)' : 'rgba(255,255,255,0.2)'
                                     }}
                                 />
