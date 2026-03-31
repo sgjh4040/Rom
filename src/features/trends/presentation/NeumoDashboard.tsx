@@ -50,40 +50,45 @@ export const NeumoDashboard: React.FC<NeumoDashboardProps> = ({
 
             <h2 className="text-2xl font-black tracking-tighter opacity-95" style={{ marginBottom: '8px', marginTop: '16px', fontSize: '1.5rem' }}>Statistics</h2>
 
-            <div style={{ padding: '16px 0' }}>
-                <NeumoCircularGauge percentage={totalProgress} />
-            </div>
-
             <div style={{
                 display: 'flex',
+                flexWrap: 'wrap', 
                 justifyContent: 'center',
-                gap: '20px',
+                alignItems: 'center',
+                gap: '40px', 
                 width: '100%',
-                maxWidth: '1200px',
-                flexWrap: 'wrap', // Allow wrapping for mobile
-                padding: '16px 8px',
-                marginTop: '16px'
+                maxWidth: '900px', 
+                marginTop: '16px',
+                padding: '16px 8px'
             }}>
-                <NeumoProgressBar
-                    label="Inhibit"
-                    percentage={inhibitPercent}
-                    gradient="var(--grad-relax)"
-                />
-                <NeumoProgressBar
-                    label="Lengthen"
-                    percentage={lengthenPercent}
-                    gradient="var(--grad-cardio)"
-                />
-                <NeumoProgressBar
-                    label="Activate"
-                    percentage={activatePercent}
-                    gradient="var(--grad-strength)"
-                />
-                <NeumoProgressBar
-                    label="Integrate"
-                    percentage={integratePercent}
-                    gradient="var(--grad-stretch)"
-                />
+                {/* 1. 좌측 (또는 상단): 원형 통계 게이지 */}
+                <div className="flex flex-col items-center justify-center" style={{ 
+                    flex: '1 1 40%', 
+                    minWidth: '200px',
+                    marginTop: '10px',
+                    paddingBottom: '10px' 
+                }}>
+                    <NeumoCircularGauge percentage={totalProgress} />
+                    <div style={{ marginTop: '24px', textAlign: 'center' }}>
+                        <p className="text-xl font-black opacity-80" style={{ letterSpacing: '2px', color: 'var(--text-primary)' }}>TOTAL</p>
+                        <p className="text-sm font-bold opacity-50" style={{ color: 'var(--text-secondary)' }}>전체 달성률</p>
+                    </div>
+                </div>
+
+                {/* 2. 우측 (또는 하단): 4개의 세부 막대 바 */}
+                <div style={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    gap: '12px',       // 막대기 사이의 간격
+                    flexWrap: 'nowrap', // 막대기 4개는 절대 줄바꿈 되지 않게 강제 결속
+                    flex: '1 1 50%',   // 폭의 나머지 반(50%)을 차지하게 함
+                    minWidth: '280px'   // 화면이 이보다 더 좁아지면 통째로 밑으로 내려감
+                }}>
+                    <NeumoProgressBar label="Inhibit" percentage={inhibitPercent} gradient="var(--grad-relax)" />
+                    <NeumoProgressBar label="Lengthen" percentage={lengthenPercent} gradient="var(--grad-cardio)" />
+                    <NeumoProgressBar label="Activate" percentage={activatePercent} gradient="var(--grad-strength)" />
+                    <NeumoProgressBar label="Integrate" percentage={integratePercent} gradient="var(--grad-stretch)" />
+                </div>
             </div>
         </div>
     );

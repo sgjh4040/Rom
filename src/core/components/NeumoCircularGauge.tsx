@@ -17,12 +17,18 @@ export const NeumoCircularGauge: React.FC<NeumoCircularGaugeProps> = ({
     const offset = circumference - (percentage / 100) * circumference;
 
     return (
-        <div className="flex flex-col items-center justify-center">
+        <div className="flex flex-col items-center justify-center w-full h-full">
             <div
                 className="neumo-card flex items-center justify-center relative"
-                style={{ width: size + 40, height: size + 40 }}
+                style={{ 
+                    width: '100%', 
+                    maxWidth: '220px', 
+                    minWidth: '120px', 
+                    aspectRatio: '1 / 1',
+                    padding: '8%' // 반응형 여백
+                }}
             >
-                <svg width={size} height={size} className="transform -rotate-90">
+                <svg viewBox={`0 0 ${size} ${size}`} width="100%" height="100%" className="transform -rotate-90">
                     {/* Background circle (inset look) */}
                     <circle
                         cx={size / 2}
@@ -54,7 +60,7 @@ export const NeumoCircularGauge: React.FC<NeumoCircularGaugeProps> = ({
                     </defs>
                 </svg>
                 <div className="absolute flex flex-col items-center">
-                    <span className="text-3xl font-bold" style={{ color: 'var(--neumo-accent)' }}>{percentage}%</span>
+                    <span className="font-bold" style={{ color: 'var(--neumo-accent)', fontSize: 'clamp(1.2rem, 5vw, 2rem)' }}>{percentage}%</span>
                 </div>
             </div>
         </div>

@@ -13,10 +13,10 @@ export const NeumoProgressBar: React.FC<NeumoProgressBarProps> = ({
     gradient = 'var(--grad-relax)'
 }) => {
     return (
-        <div className="flex flex-col items-center gap-6 flex-shrink-0" style={{ margin: '0 30px' }}>
+        <div className="flex flex-col items-center gap-4" style={{ flex: 1, minWidth: 0, margin: '0 4px' }}>
             <div
                 className="neumo-inset relative flex flex-col justify-end overflow-hidden"
-                style={{ width: 85, height: 240, padding: 8, borderRadius: '24px' }}
+                style={{ width: '100%', maxWidth: '85px', height: 200, padding: 8, borderRadius: '24px' }}
             >
                 <div
                     className="w-full rounded-2xl transition-all duration-500 ease-out"
